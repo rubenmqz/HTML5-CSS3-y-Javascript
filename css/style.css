@@ -54,3 +54,14 @@ body {
 	width: 100%;
 	height: 100vh;
 }
+
+.title-cite {
+	position: absolute;
+	left: 0;
+	top: 60%;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-family: batman;
+	font-size: 28px;
+}
