@@ -182,3 +182,7 @@ th, td {
 tbody > tr:hover {
 	background-color: #dedddd;
 }
+
+.section-container {
+	padding: 50px 0;
+}
