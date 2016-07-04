@@ -8,6 +8,10 @@ body {
 	overflow-x: hidden;
 }
 
+#googleMap {
+	height: 400px;
+}
+
 @font-face {
 	font-family: batman;
 	src: url(../fonts/batmfo__.ttf);
