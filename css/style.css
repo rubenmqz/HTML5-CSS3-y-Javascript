@@ -36,16 +36,30 @@ body {
 	list-style-type: none;
 	margin: 0px;
 	float: right;
+	font-size: 0;
 }
 
 .navbar .navbar-list .navbar-item {
-	display:inline;
+	display:inline-block;
+	font-size: 16px;
+}
+
+.navbar .navbar-list .navbar-item.active {
+	color: #f7f7f7;
+	background-color: #A4A4A4;
+}
+
+.navbar .navbar-list .navbar-item.active-reverse {
+	color: #101010;
+	background-color: #F7F7F7;
 }
 
 .navbar .navbar-list .navbar-item a {
+	display:inline-block;
 	text-decoration: none;
 	padding: 20px;
-	display: inline-block;
+	color: rgba(0, 0, 0, 0.92);
+	transition: all 0.5s linear;
 }
 
 .navbar .navbar-list .navbar-item a:hover {
