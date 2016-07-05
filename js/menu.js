@@ -54,9 +54,9 @@ var cumulativeOffset = function (element) {
 	return top;
 }
 
-var offsetQuienSoy = cumulativeOffset(document.getElementById('quien-soy'));
-var offsetEquipo = cumulativeOffset(document.getElementById('equipo'));
-var offsetTransporte = cumulativeOffset(document.getElementById('transporte'));
+var offsetQuienSoy = cumulativeOffset(document.getElementById('quien-soy')) - 50;
+var offsetEquipo = cumulativeOffset(document.getElementById('equipo')) -50;
+var offsetTransporte = cumulativeOffset(document.getElementById('transporte')) -50;
 var navbar = document.getElementsByClassName('navbar')[0];
 
 window.addEventListener('scroll', changeMenuStyle);
