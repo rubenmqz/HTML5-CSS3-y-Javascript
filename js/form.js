@@ -1,8 +1,10 @@
 var form = document.getElementById('form-contact');
 
 var apellidosInput = document.getElementsByName('tienes_apellidos');
-var inputApellidos = document.createElement("input");
+var tooManyEnemies = document.getElementById('too-many-enemies');
+var ejercitoInput = document.getElementById('ejercito');
 
+var inputApellidos = document.createElement("input");
 inputApellidos.setAttribute("id", "apellidos");
 inputApellidos.setAttribute("type", "text");
 inputApellidos.setAttribute("name", "apellidos");
@@ -19,6 +21,14 @@ for (var i = 0; i < apellidosInput.length; i++) {
 	});
 }
 
+ejercitoInput.addEventListener("keyup", function(evt) {
+	if (parseInt(this.value) > 50) {
+		tooManyEnemies.style.display = "block";
+	} else {
+		tooManyEnemies.style.display = "none";
+	}
+});
+
 form.addEventListener("submit", function (evt) {
 	var inputNombre = document.getElementById("nombre");
 	var apellidosRadioInput = {
@@ -26,6 +36,12 @@ form.addEventListener("submit", function (evt) {
 		"apellidos_no": document.getElementById("apellidos_no")
 	};
 	var emailInput = document.getElementById("email");
+	var misionesRadioInput = {
+		"mision1": document.getElementById("tipo_mision_1"),
+		"mision2": document.getElementById("tipo_mision_2"),
+		"mision3": document.getElementById("tipo_mision_3"),
+		"mision4": document.getElementById("tipo_mision_4")
+	};
 		
 
 	if (inputNombre.checkValidity() == false) {
@@ -55,6 +71,12 @@ form.addEventListener("submit", function (evt) {
 		email.focus();
 		evt.preventDefault();
 		return false;	
+	}
+
+	if (misionesRadioInput.mision1.checkValidity() == false) {
+		alert("Introduce el tipo de misión");
+		evt.preventDefault();
+		return false;
 	}
 		
 
