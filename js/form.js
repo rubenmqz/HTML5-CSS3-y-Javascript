@@ -25,6 +25,7 @@ form.addEventListener("submit", function (evt) {
 		"apellidos_si": document.getElementById("apellidos_si"),
 		"apellidos_no": document.getElementById("apellidos_no")
 	};
+	var emailInput = document.getElementById("email");
 		
 
 	if (inputNombre.checkValidity() == false) {
@@ -39,5 +40,22 @@ form.addEventListener("submit", function (evt) {
 		evt.preventDefault();
 		return false;
 	}
+
+	if (document.getElementById("apellidos")) {
+		if (document.getElementById("apellidos").checkValidity() == false) {
+			alert("Escribe tus apellidos");
+			document.getElementById("apellidos").focus();
+			evt.preventDefault();
+			return false;	
+		}
+	}
+
+	if (email.checkValidity() == false) {
+		alert("Escribe tu e-mail");
+		email.focus();
+		evt.preventDefault();
+		return false;	
+	}
+		
 
 });
