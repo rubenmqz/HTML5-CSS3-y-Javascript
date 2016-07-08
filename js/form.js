@@ -1,5 +1,8 @@
 var form = document.getElementById('form-contact');
 
+var loadingButton = document.createElement("i");
+loadingButton.classList.add("fa", "fa-spinner", "fa-spin");
+
 var apellidosInput = document.getElementsByName('tienes_apellidos');
 var tooManyEnemies = document.getElementById('too-many-enemies');
 var ejercitoInput = document.getElementById('ejercito');
@@ -16,7 +19,9 @@ for (var i = 0; i < apellidosInput.length; i++) {
 		if (this.value == "yes") {
 			this.parentNode.appendChild(inputApellidos);
 		} else {
-			this.parentNode.removeChild(inputApellidos);
+			if (document.getElementById("apellidos")) {
+				this.parentNode.removeChild(inputApellidos);
+			}
 		}
 	});
 }
@@ -49,7 +54,7 @@ form.addEventListener("submit", function (evt) {
 	};
 
 	var fechaInput = document.getElementById("fecha");
-		
+	var submitInput = document.getElementById("enviar");
 
 	if (inputNombre.checkValidity() == false) {
 		alert("Escribe tu nombre");
@@ -100,5 +105,12 @@ form.addEventListener("submit", function (evt) {
 		evt.preventDefault();
 		return false;
 	}
+
+	submitInput.appendChild(loadingButton);
+	evt.preventDefault();
+
+	setTimeout(function() {
+		submit.removeChild(loadingButton)
+	}, 1000);
 
 });
