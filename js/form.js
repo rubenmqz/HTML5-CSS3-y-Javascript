@@ -9,7 +9,7 @@ inputApellidos.setAttribute("id", "apellidos");
 inputApellidos.setAttribute("type", "text");
 inputApellidos.setAttribute("name", "apellidos");
 inputApellidos.setAttribute("placeholder", "Apellidos");
-inputApellidos.setAttribute("rquired", "");
+inputApellidos.setAttribute("required", "");
 
 for (var i = 0; i < apellidosInput.length; i++) {
 	apellidosInput[i].addEventListener("click", function() {
@@ -42,6 +42,13 @@ form.addEventListener("submit", function (evt) {
 		"mision3": document.getElementById("tipo_mision_3"),
 		"mision4": document.getElementById("tipo_mision_4")
 	};
+
+	var estasSeguroRadioInput = {
+		"seguro_si": document.getElementById("seguro_si"),
+		"seguro_no": document.getElementById("seguro_no")
+	};
+
+	var fechaInput = document.getElementById("fecha");
 		
 
 	if (inputNombre.checkValidity() == false) {
@@ -79,5 +86,19 @@ form.addEventListener("submit", function (evt) {
 		return false;
 	}
 		
+	if (tooManyEnemies.style.display === "block") {
+		if (estasSeguroRadioInput.seguro_si.checkValidity() == false) {
+			alert("Confírmanos que estás seguro");
+			evt.preventDefault();
+			return false;	
+		}
+	}
+
+	if (fechaInput.checkValidity() == false) {
+		alert("Introduce la fecha de la misión");
+		fechaInput.focus()
+		evt.preventDefault();
+		return false;
+	}
 
 });
