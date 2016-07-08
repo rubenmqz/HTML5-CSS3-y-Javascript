@@ -110,7 +110,7 @@ form.addEventListener("submit", function (evt) {
 	evt.preventDefault();
 
 	setTimeout(function() {
-		submit.removeChild(loadingButton)
+		submitInput.removeChild(loadingButton)
 	}, 1000);
 
 });
