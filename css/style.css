@@ -275,3 +275,15 @@ tbody > tr:hover {
 		opacity: 1;
 	}
 }
+
+.no-flexbox .transport {
+	overflow: auto;
+}
+
+.no-flexbox .transport .item-1 {
+	float:left;
+}
+
+.no-flexbox .transport .item-2 {
+	float:left;
+}
